@@ -16,9 +16,11 @@ const config: Config = {
       colors:{
         "primary": "#F9572E",
         "silver": "#666666",
+        "silver-2": "#CCCCCC",
         "secondary": "#FF7B59",
         "emerald": "#33B5A3",
-        "emerald-2": "#63D2C1"
+        "emerald-2": "#63D2C1",
+        "footer": "#F2F2F2"
       },
       dropShadow:{
         "primary": "0 7px 15px rgba(249, 87, 46, 0.60)",
