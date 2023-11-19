@@ -11,7 +11,7 @@ const myFontRegular = localFont({
 });
 const ContactPage = () => {
   return (
-    <div className="w-full flex justify-center items-center py-80">
+    <div className="w-full flex justify-center items-center py-[140px]">
       <div className="relative w-[980px] h-auto flex flex-col justify-center items-center border-4 border-emerald-2 py-[60px]">
         <h1
           className={`absolute px-[24px] py-[10px] bg-white text-[40px] -top-10 ${myFontMedium.className}`}
