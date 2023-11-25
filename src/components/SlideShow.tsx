@@ -24,20 +24,26 @@ const SlideShow = () => {
             Скандинавский, классический и эко-стиль
           </p>
         </div>
-        <div className="relative h-[750px] py-[50px] w-screen">
-          <div className="absolute truncate flex flex-row z-10 w-full visible left -0">
-            <SlideComponent
-              url="/slide-1.png"
-              def={`Кафельная плиткав ванной комнате в скандинавском стиле`}
-            />
-            {/* <SlideComponent
-              url="/slide-2.png"
-              def="Кафельная плиткав ванной комнате в скандинавском стиле"
-            />
+      </div>
+      <div className="relative h-[750px] py-[50px] w-full ">
+        <div className="absolute flex flex-row z-10 w-full justify-center items-center visible left -0 overflow-hidden">
+          <div className="w-[980px]">
             <SlideComponent
               url="/slide-3.png"
+              def={`Кафельная плиткав ванной комнате в скандинавском стиле`}
+            />
+          </div>
+          <div className="w-[980px]">
+            <SlideComponent
+              url="/slide-1.png"
               def="Кафельная плиткав ванной комнате в скандинавском стиле"
-            /> */}
+            />
+          </div>
+          <div className="w-[980px]">
+            <SlideComponent
+              url="/slide-1.png"
+              def="Кафельная плиткав ванной комнате в скандинавском стиле"
+            />
           </div>
         </div>
       </div>
