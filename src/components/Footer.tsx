@@ -1,5 +1,9 @@
 import Image from "next/image";
 import localFont from "next/font/local";
+import Link from "next/link";
+import { SlSocialVkontakte } from "react-icons/sl";
+import { FaFacebookF } from "react-icons/fa";
+import { ImInstagram } from "react-icons/im";
 
 const myFontMedium = localFont({
   src: "../../public/fonts/MullerMedium.woff2",
@@ -13,9 +17,15 @@ const Footer = () => {
   return (
     <div className="w-full flex justify-center items-center flex-col pt-[72px] bg-footer">
       <div className="flex gap-[30px]">
-        <Image src="/facebook.png" width={50} height={50} alt="" />
-        <Image src="/vk.png" width={50} height={50} alt="" />
-        <Image src="/instagram.png" width={50} height={50} alt="" />
+        <div className="bg-primary hover:bg-secondary hover:drop-shadow-primary cursor-pointer">
+          <FaFacebookF className="w-[50px]  block my-[15px] text-white" />
+        </div>
+        <div className="bg-primary hover:bg-secondary hover:drop-shadow-primary cursor-pointer">
+          <SlSocialVkontakte className="w-[50px]  block my-[15px] text-white fill-white" />
+        </div>
+        <div className="bg-primary hover:bg-secondary hover:drop-shadow-primary cursor-pointer">
+          <ImInstagram className="w-[50px]  block my-[15px] text-white" />
+        </div>
       </div>
       <div
         className={`mt-[32px] text-center ${myFontRegular.className} text-[21px] leading-[26px]`}
@@ -51,7 +61,11 @@ const Footer = () => {
             alt=""
             className="mr-[8px]"
           />
-          <p className="text-[21px]">9035445@gmail.com</p>
+          <Link href="mailto:9035445@gmail.com">
+            <p className="text-[21px] hover:text-primary cursor-pointer underline underline-offset-8 decoration-primary">
+              9035445@gmail.com
+            </p>
+          </Link>
         </div>
       </div>
       <div className="mt-[72px] w-[1800px] text-center text-silver py-[32px] border-t-[1px] border-silver-2">

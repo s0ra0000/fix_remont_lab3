@@ -1,4 +1,7 @@
+"use client";
+import { useState } from "react";
 import localFont from "next/font/local";
+import Image from "next/image";
 import SlideComponent from "./SlideComponent";
 const myFontMedium = localFont({
   src: "../../public/fonts/MullerMedium.woff2",
@@ -9,8 +12,19 @@ const myFontRegular = localFont({
   display: "swap",
 });
 const SlideShow = () => {
+  const [currentIndex, setCurrentIndex] = useState(1);
+  const numberOfSlides = 3;
+  const handleNextSlide = () => {
+    setCurrentIndex((prevIndex) => (prevIndex + 1) % numberOfSlides);
+  };
+
+  const handlePrevSlide = () => {
+    setCurrentIndex(
+      (prevIndex) => (prevIndex - 1 + numberOfSlides) % numberOfSlides
+    );
+  };
   return (
-    <div className="flex w-full h-auto flex-col justify-center items-center mt-[20px]">
+    <div className="relative flex w-full h-auto flex-col justify-center items-center mt-[20px]">
       <div className="w-[980px] h-auto ">
         <div>
           <h2
@@ -25,8 +39,15 @@ const SlideShow = () => {
           </p>
         </div>
       </div>
-      <div className="relative h-[750px] py-[50px] w-full ">
-        <div className="absolute flex flex-row z-10 w-full justify-center items-center visible left -0 overflow-hidden">
+      <div className="relative h-[750px] py-[50px] w-full overflow-hidden flex- justify-center items-center">
+        <div
+          className="absolute flex flex-row z-10 w-full justify-center items-center visible overflow-hidden left-[460px]"
+          style={{
+            transform: `translateX(-${currentIndex * 980}px)`, // Adjusted calculation
+            transition: "transform 0.5s ease-in-out",
+            width: `${numberOfSlides * 980}px`,
+          }}
+        >
           <div className="w-[980px]">
             <SlideComponent
               url="/slide-3.png"
@@ -41,10 +62,30 @@ const SlideShow = () => {
           </div>
           <div className="w-[980px]">
             <SlideComponent
-              url="/slide-1.png"
+              url="/slide-2.png"
               def="Кафельная плиткав ванной комнате в скандинавском стиле"
             />
           </div>
+        </div>
+      </div>
+      <div className="absolute z-20 w-[850px] h-[400px]">
+        <div className="absolute flex bottom-0 right-0 gap-8">
+          <Image
+            className="cursor-pointer"
+            src="/arrow-left.svg"
+            width={20}
+            height={42}
+            alt=""
+            onClick={handlePrevSlide}
+          />
+          <Image
+            className="cursor-pointer"
+            src="/arrow-right.svg"
+            width={20}
+            height={42}
+            alt=""
+            onClick={handleNextSlide}
+          />
         </div>
       </div>
     </div>

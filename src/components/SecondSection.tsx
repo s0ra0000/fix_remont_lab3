@@ -9,7 +9,10 @@ const myFontRegular = localFont({
 });
 const SecondSection = () => {
   return (
-    <div className="h-auto w-full flex justify-center items-center py-[166px]">
+    <div
+      id="main"
+      className="h-auto w-full flex justify-center items-center py-[166px]"
+    >
       <div className="w-[980px] h-auto flex flex-wrap gap-[40px]  justify-center items-center text-black">
         <div className={`w-full  ${myFontMedium.className}`}>
           <h2 className="text-[40px] leading-[50px]">FIX Ремонт - это легко</h2>

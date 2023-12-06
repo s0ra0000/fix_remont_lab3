@@ -1,6 +1,10 @@
+"use client";
 import Image from "next/image";
 import localFont from "next/font/local";
-
+import { useState } from "react";
+import ContactInputForm from "./ContactInputForm";
+import Submitted from "./Submitted";
+import { Link } from "react-scroll";
 const myFontMedium = localFont({
   src: "../../public/fonts/MullerMedium.woff2",
   display: "swap",
@@ -10,6 +14,13 @@ const myFontRegular = localFont({
   display: "swap",
 });
 const ContactPage = () => {
+  const [isSUbmitted, setSubmitted] = useState<boolean>(false);
+
+  const handleSubmit = (e: any) => {
+    e.preventDefault();
+    setSubmitted(true);
+  };
+
   return (
     <div className="w-full flex justify-center items-center py-[140px]">
       <div className="relative w-[980px] h-auto flex flex-col justify-center items-center border-4 border-emerald-2 py-[60px]">
@@ -18,49 +29,41 @@ const ContactPage = () => {
         >
           Узнайте о запуске сервиса первым
         </h1>
-        <div className="flex flex-col justify-center items-center ">
-          <div className="flex justify-center items-center mb-[30px] ">
-            <Image src="/door.png" width={46} height={69} alt="" />
-            <h3 className="ml-[17px]">
-              ПЕРВЫМ 10 КЛИЕНТАМ СТАЛЬНАЯ <br />
-              ВХОДНАЯ ДВЕРЬ В ПОДАРОК
-            </h3>
-          </div>
-          <form className="flex flex-col gap-[30px] mt-[30px] justify-center items-center">
-            <input
-              type="text"
-              className="w-[500px] text-[18px] py-[18px] px-[24px] text-silver rounded border-silver-2 border"
-              name="name"
-              placeholder="Имя и фамилия*"
-              required
-            />
-            <input
-              type="text"
-              className="w-[500px] text-[18px] py-[18px] px-[24px] text-silver rounded border-silver-2 border"
-              name="email"
-              placeholder="E-mail адрес*"
-              required
-            />
-            <input
-              type="text"
-              className="w-[500px] text-[18px] py-[18px] px-[24px] text-silver rounded border-silver-2 border"
-              name="phone"
-              placeholder="Телефон"
-            />
-            <button
-              type="submit"
-              className="w-auto text-white bg-primary text-[16px] px-[74px] py-[16px] rounded-full mt-[18px]"
+        {isSUbmitted ? (
+          <Submitted />
+        ) : (
+          <div className="flex flex-col justify-center items-center ">
+            <div className="flex justify-center items-center mb-[30px] ">
+              <Image src="/door.png" width={46} height={69} alt="" />
+              <h3 className="ml-[17px]">
+                ПЕРВЫМ 10 КЛИЕНТАМ СТАЛЬНАЯ <br />
+                ВХОДНАЯ ДВЕРЬ В ПОДАРОК
+              </h3>
+            </div>
+            <form
+              onSubmit={(e) => handleSubmit(e)}
+              className="flex flex-col gap-[30px] mt-[30px] justify-center items-center"
             >
-              Подписаться
-            </button>
-          </form>
-          <p className="text-[13px] text-silver mt-[22px]">
-            * Обязательные для заполнения поля
-          </p>
-          <p className="text-[13px] text-primary">
-            Политика конфиденциальности
-          </p>
-        </div>
+              <ContactInputForm name={"Имя и фамилия*"} required={true} />
+              <ContactInputForm name={"E-mail адресс*"} required={true} />
+              <ContactInputForm name={"Телефон"} required={false} />
+              <button
+                type="submit"
+                className="w-auto hover:bg-secondary text-white bg-primary text-[16px] px-[74px] py-[16px] drop-shadow-primary rounded-full mt-[18px]"
+              >
+                Подписаться
+              </button>
+            </form>
+            <p className="text-[13px] text-silver mt-[22px]">
+              * Обязательные для заполнения поля
+            </p>
+            <Link className="cursor-pointer" to="">
+              <p className="text-[13px] text-primary">
+                Политика конфиденциальности
+              </p>
+            </Link>
+          </div>
+        )}
       </div>
     </div>
   );

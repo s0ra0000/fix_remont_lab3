@@ -1,5 +1,7 @@
+"use client";
 import Image from "next/image";
 import localFont from "next/font/local";
+import { Link as ScrollLink } from "react-scroll";
 const myFontMedium = localFont({
   src: "../../public/fonts/MullerMedium.woff2",
   display: "swap",
@@ -61,12 +63,14 @@ const MainPage = () => {
             alt=""
             className="float-left"
           />
-          <p
-            className={`float-right ${myFontMedium.className} text-[16px] leading-[18px] ml-[12px]`}
-          >
-            Листайте вниз,
-            <br /> чтобы ничего не упустить
-          </p>
+          <ScrollLink to="main" smooth={true} duration={500}>
+            <p
+              className={`float-right ${myFontMedium.className} text-[16px] leading-[18px] ml-[12px]`}
+            >
+              Листайте вниз,
+              <br /> чтобы ничего не упустить
+            </p>
+          </ScrollLink>
         </div>
       </div>
       <div className="absolute left-1/2 top-5 bottom-5 z-10">

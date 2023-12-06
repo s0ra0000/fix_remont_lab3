@@ -1,4 +1,3 @@
-import { Props } from "next/script";
 import { FC } from "react";
 import Image from "next/image";
 interface SlideComponentProps {

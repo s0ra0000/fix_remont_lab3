@@ -24,6 +24,9 @@ const config: Config = {
       },
       dropShadow:{
         "primary": "0 7px 15px rgba(249, 87, 46, 0.60)",
+      },
+       outlineWidth: {
+        0.5: '0.5px',
       }
     },
   },
