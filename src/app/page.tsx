@@ -1,7 +1,6 @@
 import MainPage from "../components/MainPage";
 import SecondSection from "@/components/SecondSection";
 import ContactPage from "@/components/ContactPage";
-import Footer from "@/components/Footer";
 import SlideShow from "@/components/SlideShow";
 
 export default function Home() {
@@ -11,7 +10,6 @@ export default function Home() {
       <SecondSection />
       <SlideShow />
       <ContactPage />
-      <Footer />
     </main>
   );
 }

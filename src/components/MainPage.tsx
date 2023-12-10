@@ -12,7 +12,7 @@ const myFontRegular = localFont({
 });
 const MainPage = () => {
   return (
-    <div className="relative w-full flex justify-center h-screen items-start py-[40px]">
+    <section className="relative w-full flex justify-center h-screen items-start py-[40px]">
       <div className="relative w-[1700px] flex flex-wrap flex-col items-start justify-between h-full ">
         <div className="w-full items-center justify-between items-start h-auto flex flex-row">
           <div>
@@ -22,14 +22,16 @@ const MainPage = () => {
             <div className="flex items-center">
               <Image src="/Shape.png" width={24} height={24} alt="" />
             </div>
-            <p
-              className={`text-black text-[21px] mt-1 ${myFontMedium.className} hover:text-primary hover:cursor-pointer `}
-            >
-              Контакты
-            </p>
+            <ScrollLink to="contact" smooth={true} duration={500}>
+              <p
+                className={`text-black text-[21px] mt-1 ${myFontMedium.className} hover:text-primary hover:cursor-pointer `}
+              >
+                Контакты
+              </p>
+            </ScrollLink>
           </div>
         </div>
-        <div className="w-1/3 flex  flex-col justify-center items-start text-black">
+        <header className="w-1/3 flex  flex-col justify-center items-start text-black">
           <h1
             className={`${myFontMedium.className} text-[64px] tracking-tight leading-[64px]`}
           >
@@ -54,7 +56,7 @@ const MainPage = () => {
               Старт весной 2016
             </p>
           </div>
-        </div>
+        </header>
         <div className="text-primary hover:cursor-pointer">
           <Image
             src="/arrows.png"
@@ -73,22 +75,24 @@ const MainPage = () => {
           </ScrollLink>
         </div>
       </div>
-      <div className="absolute left-1/2 top-5 bottom-5 z-10">
+      <aside className="absolute left-1/2 top-5 bottom-5 z-10">
         <div className="relative w-full h-full flex justify-center items-center hover:cursor-pointer">
-          <div>
+          <figure>
             <Image src="/hero.png" width={940} height={920} alt="" />
-          </div>
+          </figure>
           <div className="w-full h-full absolute top-0 left-0 z-10 flex flex-col justify-center items-center">
-            <Image src="/play.png" width={250} height={250} alt="" />
-            <p
-              className={`${myFontRegular.className} text-[21px] leading-[30px text-primary mt-[19px]`}
-            >
-              Смотреть видео
-            </p>
+            <figure>
+              <Image src="/play.png" width={250} height={250} alt="" />
+              <figcaption
+                className={`${myFontRegular.className} text-center text-[21px] leading-[30px] text-primary mt-[19px]`}
+              >
+                Смотреть видео
+              </figcaption>
+            </figure>
           </div>
         </div>
-      </div>
-    </div>
+      </aside>
+    </section>
   );
 };
 export default MainPage;

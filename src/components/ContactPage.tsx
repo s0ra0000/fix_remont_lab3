@@ -22,7 +22,10 @@ const ContactPage = () => {
   };
 
   return (
-    <div className="w-full flex justify-center items-center py-[140px]">
+    <section
+      id="contact"
+      className="w-full flex justify-center items-center py-[140px]"
+    >
       <div className="relative w-[980px] h-auto flex flex-col justify-center items-center border-4 border-emerald-2 py-[60px]">
         <h1
           className={`absolute px-[24px] py-[10px] bg-white text-[40px] -top-10 ${myFontMedium.className}`}
@@ -33,13 +36,13 @@ const ContactPage = () => {
           <Submitted />
         ) : (
           <div className="flex flex-col justify-center items-center ">
-            <div className="flex justify-center items-center mb-[30px] ">
+            <header className="flex justify-center items-center mb-[30px] ">
               <Image src="/door.png" width={46} height={69} alt="" />
               <h3 className="ml-[17px]">
                 ПЕРВЫМ 10 КЛИЕНТАМ СТАЛЬНАЯ <br />
                 ВХОДНАЯ ДВЕРЬ В ПОДАРОК
               </h3>
-            </div>
+            </header>
             <form
               onSubmit={(e) => handleSubmit(e)}
               className="flex flex-col gap-[30px] mt-[30px] justify-center items-center"
@@ -65,7 +68,7 @@ const ContactPage = () => {
           </div>
         )}
       </div>
-    </div>
+    </section>
   );
 };
 export default ContactPage;

@@ -15,7 +15,7 @@ const myFontRegular = localFont({
 });
 const Footer = () => {
   return (
-    <div className="w-full flex justify-center items-center flex-col pt-[72px] bg-footer">
+    <footer className="w-full flex justify-center items-center flex-col pt-[72px] bg-footer">
       <div className="flex gap-[30px]">
         <div className="bg-primary hover:bg-secondary hover:drop-shadow-primary cursor-pointer">
           <FaFacebookF className="w-[50px]  block my-[15px] text-white" />
@@ -71,7 +71,7 @@ const Footer = () => {
       <div className="mt-[72px] w-[1800px] text-center text-silver py-[32px] border-t-[1px] border-silver-2">
         <p className="text-[16px] leading-[24px]">© FIX Ремонт, 2016</p>
       </div>
-    </div>
+    </footer>
   );
 };
 export default Footer;

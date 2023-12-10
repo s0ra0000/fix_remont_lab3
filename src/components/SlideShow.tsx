@@ -26,7 +26,7 @@ const SlideShow = () => {
   return (
     <div className="relative flex w-full h-auto flex-col justify-center items-center mt-[20px]">
       <div className="w-[980px] h-auto ">
-        <div>
+        <header>
           <h2
             className={`${myFontMedium.className} text-[40px] leading-[50px]`}
           >
@@ -37,7 +37,7 @@ const SlideShow = () => {
           >
             Скандинавский, классический и эко-стиль
           </p>
-        </div>
+        </header>
       </div>
       <div className="relative h-[750px] py-[50px] w-full overflow-hidden flex- justify-center items-center">
         <div

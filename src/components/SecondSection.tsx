@@ -9,17 +9,17 @@ const myFontRegular = localFont({
 });
 const SecondSection = () => {
   return (
-    <div
+    <section
       id="main"
       className="h-auto w-full flex justify-center items-center py-[166px]"
     >
       <div className="w-[980px] h-auto flex flex-wrap gap-[40px]  justify-center items-center text-black">
-        <div className={`w-full  ${myFontMedium.className}`}>
+        <header className={`w-full  ${myFontMedium.className}`}>
           <h2 className="text-[40px] leading-[50px]">FIX Ремонт - это легко</h2>
           <p className="text-emerald text-[16px] leading-[24px] tracking-wide">
             ГОТОВЫЕ ПРОЕКТЫ, ПРОВЕРЕННЫЕ МАТЕРИАЛЫ И УМЕЛЫЕ РУКИ
           </p>
-        </div>
+        </header>
         <div className="grid grid-cols-2  gap-[80px]">
           <div className=" py-[33px] border-t-4 border-emerald-2">
             <h3
@@ -73,7 +73,7 @@ const SecondSection = () => {
           </div>
         </div>
       </div>
-    </div>
+    </section>
   );
 };
 
