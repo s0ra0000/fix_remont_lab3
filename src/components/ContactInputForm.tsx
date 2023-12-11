@@ -2,8 +2,13 @@ import { useState, FC } from "react";
 interface ContactInputFormProps {
   name: string;
   required: boolean;
+  id: string;
 }
-const ContactInputForm: FC<ContactInputFormProps> = ({ name, required }) => {
+const ContactInputForm: FC<ContactInputFormProps> = ({
+  name,
+  required,
+  id,
+}) => {
   const [isFocused, setIsFocused] = useState(false);
   const [inputValue, setInputValue] = useState("");
 
@@ -35,11 +40,12 @@ const ContactInputForm: FC<ContactInputFormProps> = ({ name, required }) => {
                      : "-translate-y-1/2"
                  } 
                 `}
-        htmlFor="name"
+        htmlFor={id}
       >
         {name}
       </label>
       <input
+        id={id}
         type="text"
         className="w-[500px] bg-transparent text-[18px] py-[18px] px-[24px] text-silver rounded border-silver-2 border focus:outline-primary focus:outline-1"
         name="name"
